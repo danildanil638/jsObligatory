@@ -27,5 +27,5 @@ console.log('Период равен ' + period +' месяцев');
 // Объявление переменной budgetDay
 let budgetDay;
 // Дневной бюджет
-budgetDay = 1000;
+budgetDay = money/30;
 console.log(budgetDay);
