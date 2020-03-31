@@ -46,8 +46,8 @@ deposit = confirm('Есть ли у вас депозит в банке?');
 
 // Спрашиваю у пользователя 2 раза по 2 вопроса и записываю их в разные переменные
 let expenses1 = prompt('Введите обязательную статью расходов?');
-let expenses2 = prompt('Введите обязательную статью расходов?');
 let amount1 = prompt('Во сколько это обойдется?');
+let expenses2 = prompt('Введите обязательную статью расходов?');
 let amount2 = prompt('Во сколько это обойдется?');
 
 // Бюджет на месяц
@@ -55,10 +55,10 @@ let budgetMonth = money - (amount1 - amount2);
 console.log('Бюджет на месяц', budgetMonth)
 
 //Рассчёт количества  месяцев для достижения цели
-console.log('цель будет достигнута за ', Math.floor(mission / budgetMonth),' месяца(ев)');
+console.log('цель будет достигнута за ', Math.ceil(mission / budgetMonth),' месяца(ев)');
 
 // Рассчёт дневного бюджета, учитывая бюджет на месяц 
-budgetDay = money / budgetMonth;
+budgetDay =  budgetMonth / 30;
 
 // Вывод в консоль дневного бюджета с округлением
 console.log('Бюджет на день', Math.floor(budgetDay));
