@@ -80,5 +80,14 @@ console.log('Расходы за месяц: ' + appData.expensesMonth);
 
 for (let key in appData) {
   console.log( 'наша программа включает в себя данные:', 'Свойство ' + key + ' значение: ' + appData[key]);
+  if (key === 'expenses') {
+    for (let key in appData.expenses) {
+      console.log('ответ на первый вопрос: еда' + key + ' его значение: ' + appData.expenses[key]);
+    }
+  }
+  if (key === 'income') {
+    for (let key in appData.income) {
+      console.log( key +'значение: '  + appData.income[key]);
+    }
+  }
 }
-console.log(appData.expenses, appData.income);
