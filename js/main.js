@@ -74,8 +74,9 @@ console.log('Период равен ' + appData.period + ' месяцев');
 let res = appData.getTargetMonth();
 if (res > 0) {
   console.log('цель будет достигнута за', res, ' месяц(ев)');
-} else
-console.log('Цель не будет достигнута');
+} else {
+  console.log('Цель не будет достигнута');
+}
 console.log('Расходы за месяц: ' + appData.expensesMonth);
 
 for (let key in appData) {
@@ -87,7 +88,7 @@ for (let key in appData) {
   }
   if (key === 'income') {
     for (let key in appData.income) {
-      console.log( key +'значение: '  + appData.income[key]);
+      console.log( key +'значение: '+ appData.income[key]);
     }
   }
 }
