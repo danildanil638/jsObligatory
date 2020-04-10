@@ -6,14 +6,14 @@ let isNumber = function(n) {
 let money,
     start = function() {
       do {
-        money = prompt('Ваш месячный доход g', '50000');
+        money = prompt('Ваш месячный доход ', '50000');
       }
-      while (!isNumber(money));
+      while (!isNumber(money) || money === '' || money === null);
     };
 start();
 
 let appData = {
-  budget: money,
+  budget: +money,
   budgetDay: 0,
   budgetMonth: 0,
   expensesMonth: 0,
@@ -32,13 +32,13 @@ let appData = {
       do {
         itemIncome = prompt('Какой у вас есть дополнительный зароботок? ', 'таксую')
       }
-      while (isNumber(itemIncome));
+      while (isNumber(itemIncome) || itemIncome === '' || itemIncome === null);
 
       let cashIncome;
       do {
         cashIncome = prompt('Сколько в месяц зарабатываете на этом? ', 10000);
       }
-      while (!isNumber(cashIncome));
+      while (!isNumber(cashIncome) || cashIncome === '' || cashIncome === null);
       appData.income[itemIncome] = cashIncome;
     };
 
@@ -48,7 +48,7 @@ let appData = {
    do {
      addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую ', 'еда, таблетки');
    }
-   while (isNumber(addExpenses));
+   while (isNumber(addExpenses) || addExpenses === '' || addExpenses === null);
    
 
 
@@ -62,18 +62,17 @@ let appData = {
       do {
         expenses = prompt('Введите обязательную статью расходов? ', 'еда');
       }
-      while (isNumber(expenses));
+      while (isNumber(expenses) || expenses === '' || expenses === null);
       do {
         sum = prompt('Во сколько это обойдётся ', '4500');
       }
-      while (!isNumber(sum));
-      sum =+sum;
+      while (!isNumber(sum) || sum === '' || sum === null);
+      sum =+ sum;
       appData.expenses[expenses] = sum;
     }
   },
   getExpensesMonth: function() {
       for (let key in appData.expenses) {
-        console.log(key);
         appData.expensesMonth += +appData.expenses[key];
       }
     },
@@ -144,4 +143,9 @@ for (let key in appData) {
   }
 }
 
-console.log(appData.addExpenses.join(','));
+
+
+let results = appData.addExpenses.map(function (word) {
+  return word.charAt(0).toUpperCase() + word.substr(1);
+});
+console.log(results.join(','));
