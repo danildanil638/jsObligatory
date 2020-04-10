@@ -6,7 +6,7 @@ let isNumber = function(n) {
 let money,
     start = function() {
       do {
-        money = prompt('Ваш месячный доход', '50000');
+        money = prompt('Ваш месячный доход g', '50000');
       }
       while (!isNumber(money));
     };
@@ -46,7 +46,7 @@ let appData = {
 
    let addExpenses;
    do {
-     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'еда, таблетки');
+     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую ', 'еда, таблетки');
    }
    while (isNumber(addExpenses));
    
@@ -60,11 +60,11 @@ let appData = {
       let sum;
       let expenses;
       do {
-        expenses = prompt('Введите обязательную статью расходов?', 'еда');
+        expenses = prompt('Введите обязательную статью расходов? ', 'еда');
       }
       while (isNumber(expenses));
       do {
-        sum = prompt('Во сколько это обойдётся', '4500');
+        sum = prompt('Во сколько это обойдётся ', '4500');
       }
       while (!isNumber(sum));
       sum =+sum;
@@ -131,7 +131,7 @@ if (res > 0) {
 console.log('Расходы за месяц: ' + appData.expensesMonth);
 
 for (let key in appData) {
-  console.log( 'наша программа включает в себя данные:', 'Свойство ' + key + ' значение: ' + appData[key]);
+  console.log( 'наша программа включает в себя данные: ', 'Свойство ' + key + ' значение: ' + appData[key]);
   if (key === 'expenses') {
     for (let key in appData.expenses) {
       console.log('ответ на первый вопрос: еда' + key + ' его значение: ' + appData.expenses[key]);
