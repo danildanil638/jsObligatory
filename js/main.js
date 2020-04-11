@@ -46,7 +46,7 @@ let appData = {
 
    let addExpenses;
    do {
-     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую ', 'еда, таблетки');
+     addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую ', 'еда,таблетки');
    }
    while (isNumber(addExpenses) || addExpenses === '' || addExpenses === null);
    
@@ -144,8 +144,5 @@ for (let key in appData) {
 }
 
 
+console.log(appData.addExpenses.map(word => word.charAt(0).toUpperCase(1) + word.substring(1)).join(', '));
 
-let results = appData.addExpenses.map(function (word) {
-  return word.charAt(0).toUpperCase() + word.substr(1);
-});
-console.log(results.join(','));
